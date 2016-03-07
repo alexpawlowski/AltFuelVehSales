@@ -20,7 +20,7 @@ salesplot <- ggplot(data = sales, aes(x = Date, y = value, color = variable)) +
   geom_point(size = 4, alpha = 0.85) +
   geom_line(size = 2, alpha = 0.35) +
   scale_color_brewer(palette = "Paired") +
-  ggtitle("Alternative Fuel Sales")+
+  ggtitle("Alternative Vehicle Sales")+
   scale_x_date(name = "Date", date_breaks = "1 year", date_minor_breaks = "4 months", date_labels = "%b %y") +
   scale_y_continuous(name = "Sales %", labels = scales::percent, limits = c(0,0.06), minor_breaks = 0.01) +
   # discrete: lims(x = c(0,2) , y = c(0,300)) +
@@ -36,7 +36,9 @@ salesplot <- ggplot(data = sales, aes(x = Date, y = value, color = variable)) +
     #panel.border = element_rect(color="#58595B"),#element_blank(),
     panel.grid.major.x = element_line(color = "#A7A9AC", size = 0.5),
     panel.grid.major.y = element_line(color = "#A7A9AC", size = 0.5),
-    legend.position = "top"
+    legend.position = "top",
+    legend.title = element_text(color="#58595B", size = 16),
+    legend.text = element_text(color="#58595B", size = 16)
   )
 salesplot
 # save plot ----
